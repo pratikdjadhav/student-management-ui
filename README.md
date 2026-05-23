@@ -101,26 +101,6 @@ const API_URL = "http://localhost:8080"; // for local development
 
 ---
 
-## 📸 Screenshots
-
-### Login Page
-- Clean authentication UI with login/register tabs
-- Gradient purple background
-
-### Dashboard
-- 4 colorful stat cards showing key metrics
-- Recent students table with fee status
-
-### Students Page
-- Full student table with fees breakdown
-- Add/Edit/Delete functionality
-- Filter by course, sort options, pagination
-
-### Courses Page
-- Course listing with fees
-- Add new course modal
-
----
 
 ## 🔄 How It Works
 
