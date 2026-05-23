@@ -1,0 +1,80 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; }
+
+/* Auth */
+.auth-body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.auth-container { width: 100%; max-width: 420px; padding: 20px; }
+.auth-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+.auth-logo { text-align: center; margin-bottom: 30px; color: #667eea; }
+.auth-logo i { font-size: 50px; margin-bottom: 10px; }
+.auth-logo h2 { font-weight: 700; color: #333; }
+.auth-tabs { background: #f8f9fa; border-radius: 10px; padding: 5px; margin-bottom: 25px; }
+.auth-tabs .nav-link { border-radius: 8px; color: #666; font-weight: 500; }
+.auth-tabs .nav-link.active { background: #667eea; color: white; }
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    position: fixed;
+    left: 0; top: 0;
+    padding: 20px 0;
+    z-index: 100;
+}
+.sidebar-brand {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    margin-bottom: 20px;
+}
+.sidebar-brand i { font-size: 40px; margin-bottom: 8px; }
+.sidebar-brand h4 { font-weight: 700; margin: 0; }
+.sidebar .nav-link {
+    color: rgba(255,255,255,0.8);
+    padding: 12px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+.sidebar .nav-link:hover, .sidebar .nav-link.active {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding-left: 35px;
+}
+.sidebar .nav-link i { width: 20px; }
+.sidebar-footer { position: absolute; bottom: 20px; width: 100%; padding: 0 20px; }
+
+/* Main */
+.main-content { margin-left: 250px; padding: 30px; background: #f8f9fa; min-height: 100vh; }
+
+/* Cards */
+.stat-card { border-radius: 15px; padding: 25px; color: white; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+.stat-card i { font-size: 40px; opacity: 0.8; }
+.stat-card h3 { font-size: 2rem; font-weight: 700; margin: 10px 0 5px; }
+
+/* Table Card */
+.table-card { background: white; border-radius: 15px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.table th { background: #f8f9fa; font-weight: 600; color: #555; }
+
+/* Buttons */
+.btn-primary { background: #667eea; border-color: #667eea; }
+.btn-primary:hover { background: #5a6fd6; border-color: #5a6fd6; }
+
+/* Modal */
+.modal-header { background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 10px 10px 0 0; }
+.modal-header .btn-close { filter: invert(1); }
