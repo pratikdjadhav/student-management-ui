@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:8080";
-
+const API_URL = "https://student-management-backend-production-98f6.up.railway.app";
+//const API_URL = "http://localhost:8080";
 function getToken() { return sessionStorage.getItem("token"); }
 function getUsername() { return sessionStorage.getItem("username"); }
 
@@ -37,7 +37,10 @@ function showRegister() {
 async function login() {
     const username = document.getElementById("loginUsername").value;
     const password = document.getElementById("loginPassword").value;
-    if (!username || !password) { showError("loginError", "Please enter username and password!"); return; }
+    if (!username || !password) {
+        showError("loginError", "Please enter username and password!");
+        return;
+    }
     try {
         const response = await fetch(`${API_URL}/api/auth/login`, {
             method: "POST",
@@ -52,27 +55,36 @@ async function login() {
         } else {
             showError("loginError", "Invalid username or password!");
         }
-    } catch (error) { showError("loginError", "Cannot connect to server!"); }
+    } catch (error) {
+        showError("loginError", "Cannot connect to server!");
+    }
 }
 
 async function register() {
     const username = document.getElementById("registerUsername").value;
+    const email = document.getElementById("registerEmail").value;
     const password = document.getElementById("registerPassword").value;
-    if (!username || !password) { showError("registerError", "Please fill all fields!"); return; }
+    if (!username || !email || !password) {
+        showError("registerError", "Please fill all fields!");
+        return;
+    }
     try {
         const response = await fetch(`${API_URL}/api/auth/register`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, password })
+            body: JSON.stringify({ username, email, password })
         });
         if (response.ok) {
             document.getElementById("registerSuccess").classList.remove("d-none");
-            document.getElementById("registerSuccess").innerText = "Registered successfully! Please login.";
+            document.getElementById("registerSuccess").innerText =
+                "Registered successfully! Please login.";
             setTimeout(() => showLogin(), 2000);
         } else {
             showError("registerError", "Username already exists!");
         }
-    } catch (error) { showError("registerError", "Cannot connect to server!"); }
+    } catch (error) {
+        showError("registerError", "Cannot connect to server!");
+    }
 }
 
 function showError(id, msg) {
