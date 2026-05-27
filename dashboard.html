@@ -9,10 +9,12 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- Sidebar -->
 <div class="sidebar">
     <div class="sidebar-brand">
         <i class="fas fa-graduation-cap d-block"></i>
-        <h4>Student Management System</h4>
+        <h4>Student MS</h4>
         <small id="welcomeUser" class="opacity-75"></small>
     </div>
     <nav>
@@ -21,36 +23,42 @@
         <a href="courses.html" class="nav-link"><i class="fas fa-book"></i> Courses</a>
     </nav>
     <div class="sidebar-footer">
-        <button class="btn btn-outline-light w-100" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <button class="btn btn-outline-light w-100" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
     </div>
 </div>
+
+<!-- Main Content -->
 <div class="main-content">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="fw-bold">Dashboard</h4>
     </div>
+
+    <!-- Stat Cards -->
     <div class="row g-4 mb-4">
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
             <div class="stat-card" style="background: linear-gradient(135deg, #667eea, #764ba2)">
                 <i class="fas fa-user-graduate"></i>
                 <h3 id="totalStudents">0</h3>
                 <p class="mb-0">Total Students</p>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
             <div class="stat-card" style="background: linear-gradient(135deg, #f093fb, #f5576c)">
                 <i class="fas fa-book"></i>
                 <h3 id="totalCourses">0</h3>
                 <p class="mb-0">Total Courses</p>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
             <div class="stat-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe)">
                 <i class="fas fa-rupee-sign"></i>
                 <h3 id="totalCollected">₹0</h3>
                 <p class="mb-0">Fees Collected</p>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 col-sm-6">
             <div class="stat-card" style="background: linear-gradient(135deg, #f7971e, #ffd200)">
                 <i class="fas fa-clock"></i>
                 <h3 id="totalPending">₹0</h3>
@@ -58,21 +66,33 @@
             </div>
         </div>
     </div>
+
+    <!-- Recent Students -->
     <div class="table-card">
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h5 class="fw-bold mb-0">Recent Students</h5>
             <a href="students.html" class="btn btn-primary btn-sm">View All</a>
         </div>
-        <table class="table table-hover">
-            <thead>
-                <tr><th>#</th><th>Name</th><th>Email</th><th>Course</th><th>Paid</th><th>Pending</th></tr>
-            </thead>
-            <tbody id="recentStudents">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Course</th>
+                    <th>Paid</th>
+                    <th>Pending</th>
+                </tr>
+                </thead>
+                <tbody id="recentStudents">
                 <tr><td colspan="6" class="text-center">Loading...</td></tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/auth.js"></script>
 <script src="js/dashboard.js"></script>
