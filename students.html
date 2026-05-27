@@ -9,6 +9,8 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+
+<!-- Sidebar -->
 <div class="sidebar">
     <div class="sidebar-brand">
         <i class="fas fa-graduation-cap d-block"></i>
@@ -21,9 +23,13 @@
         <a href="courses.html" class="nav-link"><i class="fas fa-book"></i> Courses</a>
     </nav>
     <div class="sidebar-footer">
-        <button class="btn btn-outline-light w-100" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+        <button class="btn btn-outline-light w-100" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
     </div>
 </div>
+
+<!-- Main Content -->
 <div class="main-content">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h4 class="fw-bold">Students</h4>
@@ -35,20 +41,20 @@
     <!-- Filters -->
     <div class="table-card mb-4">
         <div class="row g-3 align-items-end">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
                 <label class="form-label fw-bold">Filter by Course</label>
                 <select class="form-select" id="courseFilter" onchange="filterByCourse()">
                     <option value="">All Courses</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
                 <label class="form-label fw-bold">Sort By</label>
                 <select class="form-select" id="sortBy" onchange="loadStudents()">
                     <option value="name">Name</option>
                     <option value="email">Email</option>
                 </select>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-6">
                 <label class="form-label fw-bold">Per Page</label>
                 <select class="form-select" id="pageSize" onchange="loadStudents()">
                     <option value="5">5</option>
@@ -59,19 +65,26 @@
         </div>
     </div>
 
-    <!-- Table -->
+    <!-- Students Table -->
     <div class="table-card">
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
-                    <tr>
-                        <th>#</th><th>Name</th><th>Email</th><th>Phone</th>
-                        <th>Course</th><th>Total Fees</th><th>Paid</th><th>Pending</th>
-                        <th>Status</th><th>Actions</th>
-                    </tr>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Course</th>
+                    <th>Total Fees</th>
+                    <th>Paid</th>
+                    <th>Pending</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
                 </thead>
                 <tbody id="studentsTable">
-                    <tr><td colspan="10" class="text-center">Loading...</td></tr>
+                <tr><td colspan="10" class="text-center">Loading...</td></tr>
                 </tbody>
             </table>
         </div>
@@ -108,6 +121,12 @@
                     <input type="text" class="form-control" id="studentAddress" placeholder="Enter address">
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">Course</label>
+                    <select class="form-select" id="studentCourse">
+                        <option value="">Select Course</option>
+                    </select>
+                </div>
+                <div class="mb-3">
                     <label class="form-label">Paid Fees (₹)</label>
                     <input type="number" class="form-control" id="studentPaidFees" placeholder="Amount paid" min="0">
                 </div>
@@ -120,12 +139,6 @@
                     <select class="form-select" id="studentStatus">
                         <option value="ACTIVE">Active</option>
                         <option value="INACTIVE">Inactive</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Course</label>
-                    <select class="form-select" id="studentCourse">
-                        <option value="">Select Course</option>
                     </select>
                 </div>
                 <div id="studentError" class="alert alert-danger d-none"></div>
@@ -165,6 +178,10 @@
                     <input type="text" class="form-control" id="editStudentAddress">
                 </div>
                 <div class="mb-3">
+                    <label class="form-label">Course</label>
+                    <select class="form-select" id="editStudentCourse"></select>
+                </div>
+                <div class="mb-3">
                     <label class="form-label">Paid Fees (₹)</label>
                     <input type="number" class="form-control" id="editStudentPaidFees" min="0">
                 </div>
@@ -178,10 +195,6 @@
                         <option value="ACTIVE">Active</option>
                         <option value="INACTIVE">Inactive</option>
                     </select>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Course</label>
-                    <select class="form-select" id="editStudentCourse"></select>
                 </div>
                 <div id="editStudentError" class="alert alert-danger d-none"></div>
             </div>
